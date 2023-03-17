@@ -1,1 +1,28 @@
-<h1>Hello World!</h1>
+<!-- The 'Home' page -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="container description mb-5 pb-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 order-0 order-md-0 order-1 order-sm-0 text-center text-md-start mb-3 mb-md-0 pb-3">
+                <div class="description-box">
+                    <h2 class="main-text">Hello, <br> I'm <span class="name">Bogdan Otava</span>.</h2>
+                    <p class="secondary-text">I am a <span class="work">Software Developer</span>.</p>
+                    <div class="d-flex justify-content-center justify-content-sm-start">
+                        <button class="btn d-flex align-items-center justify-content-center" type="button">READ MORE <i class="bx bx-right-arrow-circle px-2"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 order-1 order-md-1 order-0 order-sm-1 text-center text-md-end">
+                <div class="description-image d-flex justify-content-center align-items-center overflow-hidden">
+                    <img class="img-fluid w-75 h-75 object-fit-contain" src="../static/images/main_picture.png">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

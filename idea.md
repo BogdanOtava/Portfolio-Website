@@ -2,8 +2,9 @@
 
 ## **Webpage Style**
 
-- [x] **60-30-10 rule** for colors. **60**: #E8E8E8 / **30**: #721789 / **10**: #D590FF.
-- [ ] design a **logo** for the favicon and the title.
+- [x] **60-30-10 rule** for colors.
+- [x] design a **logo** for the favicon and the title.
+- [ ] a **loading screen** when first visiting.
 - [ ] **animation** for _transition between pages_.
 - [ ] responsive **animated background** for the main page.
 
@@ -19,19 +20,19 @@
 
 ## **Layout Template**
 
-- [ ] **imports** added here.
-- [ ] **header** with _logo_ on the left and _navigation menu_ on the right.
-- [ ] the _navigation menu_ links to the other **pages**.
-- [ ] **footer** with _links_ to **socials**.
-- [ ] this **template** will be _inherited_ by the other **pages**.
+- [x] **imports** added here.
+- [x] **header** with _logo_ on the left and _navigation menu_ on the right.
+- [x] the _navigation menu_ links to the other **pages**.
+- [x] **footer** with _links_ to **socials**.
+- [x] this **template** will be _inherited_ by the other **pages**.
 
 ---
 
 ## **Home Page**
 
 - [ ] short **description** with _text typing animation_ on the left side.
-- [ ] _read more_ **button** below the description that **links** to the **about me page**.
-- [ ] a **memoji** or **other image** on the right side. It should move below the **description** for _smaller displays_.
+- [x] _read more_ **button** below the description that **links** to the **about me page**.
+- [x] a **memoji** or **other image** on the right side. It should move below the **description** on _smaller displays_.
 
 ---
 
