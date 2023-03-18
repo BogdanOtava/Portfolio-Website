@@ -30,7 +30,7 @@
 
 ## **Home Page**
 
-- [ ] short **description** with _text typing animation_ on the left side.
+- [x] short **description** with _text typing animation_ on the left side.
 - [x] _read more_ **button** below the description that **links** to the **about me page**.
 - [x] a **memoji** or **other image** on the right side. It should move below the **description** on _smaller displays_.
 
