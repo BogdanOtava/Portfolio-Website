@@ -1,3 +1,5 @@
+// Displays the typing text effect for the job titles on the main page
+
 // Get the typing text from the JSON file
 fetch('/static/text/jobTitles.json')
     .then(response => response.json())

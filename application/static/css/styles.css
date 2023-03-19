@@ -129,3 +129,7 @@ body {
     color: rgb(114, 48, 48);
     font-weight: 700;
 }
+
+.particles-container {
+    z-index: -1;
+}

@@ -6,7 +6,7 @@
 - [x] design a **logo** for the favicon and the title.
 - [ ] a **loading screen** when first visiting.
 - [ ] **animation** for _transition between pages_.
-- [ ] responsive **animated background** for the main page.
+- [x] responsive **animated background** for the main page.
 
 ---
 

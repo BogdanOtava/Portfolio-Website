@@ -2,11 +2,27 @@
 
 {% extends "layout.html" %}
 
+{% block head %}
+    <!-- Inherit from 'layout.html' -->
+    {{ super() }}
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- JS -->
+    <script src="../static/js/particles.js" defer></script>
+    <script src="../static/js/typingEffect.js"></script>
+{% endblock %}
+
 {% block title %}
     Home
 {% endblock %}
 
 {% block main %}
+    <!-- Particles Background -->
+    <div id="particles-js" class="particles-container position-fixed w-100 h-100 top-0 start-0"></div>
+    <!-- End of Particles Background -->
+    <!-- Main Content -->
     <div class="container description mb-5 pb-5">
         <div class="row align-items-center justify-content-center">
             <div class="col-md-6 order-0 order-md-0 order-1 order-sm-0 text-center text-md-start mb-3 mb-md-0 pb-3">
@@ -25,4 +41,5 @@
             </div>
         </div>
     </div>
+    <!-- End of Main Content -->
 {% endblock %}
