@@ -38,9 +38,9 @@
 
 ## **About Page**
 
-- [ ] **description** in a few _paragraphs_ on the left side.
-- [ ] some **bullet points** on the right side with _location_, _education_, _experience_, _etc_.
-- [ ] those will stack each other on _smaller displays_.
+- [x] **description** in a few _paragraphs_ on the left side.
+- [ ] ~~some **bullet points** on the right side with _location_, _education_, _experience_, _etc_.~~ / added **education** instead.
+- [x] those will stack each other on _smaller displays_.
 
 ---
 

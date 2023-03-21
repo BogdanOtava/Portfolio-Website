@@ -1,0 +1,17 @@
+   I'm a 25-year-old programmer based in Cluj-Napoca, Romania. 
+   
+   My journey in programming started over a year ago, when I stumbled upon some Python tutorials on YouTube. 
+Driven by curiosity and the passion for learning,
+I dove deeper into the world of Python and completed a comprehensive course that lasted five months.
+I then furthered my knowledge by enrolling in a self-paced Introduction to Computer Science course.
+
+   Currently, my primary focus is on backend development, where I have expertise in languages
+such as Python, Java, and C. However, I also possess knowledge of frontend development,
+enabling me to contribute to full-stack development projects. My skills extend
+beyond programming languages, as I also have experience in databases, Git & Version Control,
+algorithms & data structures, Object-Oriented Programming, and Linux.
+
+   I'm currently seeking new opportunities to further my growth and learn more
+about software development and web development. I am highly motivated to expand
+my skills and take on new challenges. Please feel free to reach out to me if 
+you'd like to know more.
