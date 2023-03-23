@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template
 from config import TEMPLATES_PATH, TEXT_PATH
-from application.helpers import is_active, read_file
+from application.helpers import *
 
 
 app = Flask(__name__, template_folder=TEMPLATES_PATH)
@@ -23,3 +23,12 @@ def about():
     content = read_file(f"{TEXT_PATH}/about.txt")
 
     return render_template("about.html", content=content)
+
+
+@app.route("/skills")
+def skills():
+    """Renders the 'Skills' page of the website."""
+
+    skills = get_skills(f"{TEXT_PATH}/skills.json")
+
+    return render_template("skills.html", skills=skills)

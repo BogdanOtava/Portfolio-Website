@@ -14,6 +14,10 @@ body {
     font-family: "Lora", serif;
 }
 
+.background {
+    z-index: -1;
+}
+
 /*********************/
 /*  BUTTONS          */
 /*********************/
@@ -35,6 +39,24 @@ body {
 .btn a {
     text-decoration: none;
     color: inherit;
+}
+
+/*********************/
+/*  CARDS            */
+/*********************/
+
+.card-design {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(6.8px);
+}
+
+.inner-card-design {
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /*********************/
@@ -130,18 +152,12 @@ body {
 }
 
 .description-image {
-    background-color: var(--main-color);
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
     border-radius: 50%;
 }
 
 #typing-text {
     color: var(--highlights-color);
     font-weight: 700;
-}
-
-.particles-container {
-    z-index: -1;
 }
 
 /*********************/
@@ -158,46 +174,33 @@ body {
     }
 }
 
-.about .first-card {
-    background: rgba(255, 255, 255, 0.10);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(6.8px);
+.about .description-card {
     min-height: 500px;
     max-height: 1250px;
 }
 
-.about .second-card {
-    background: rgba(255, 255, 255, 0.10);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(6.8px);
+.about .education-card {
     min-height: 500px;
     max-height: 1250px;
 }
 
 .about .inner-card {
-    background: rgba(255, 255, 255, 0.20);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
 }
 
-.about .first-card .inner-card:hover {
+.about .description-card .inner-card:hover {
     transform: scale(1.025);
 }
 
-.about .second-card .inner-card:hover {
+.about .education-card .inner-card:hover {
     transform: scale(1.05);
 }
 
-.about .first-card .arrow {
+.about .description-card .arrow {
     color: var(--highlights-color);
 }
 
-.about .second-card .school-name {
+.about .education-card .school-name {
     color: var(--highlights-color);
     font-weight: 600;
 }
@@ -210,4 +213,40 @@ body {
 
 .about .paragraph {
     font-size: 17px;
+}
+
+/*********************/
+/*  SKILLS           */
+/*********************/
+
+.skills {
+    margin-top: 10rem;
+}
+
+.skills .page-title {
+    color: var(--highlights-color);
+    font-weight: 900;
+}
+
+.skills .inner-card {
+    transition: 0.3s;
+}
+
+.skills .inner-card:hover {
+    transform: scale(1.10);
+}
+
+.skills .card-title {
+    color:var(--highlights-color);
+    font-weight: 700;
+}
+
+.skills .inner-card .card-title {
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.skills .inner-card .img-fluid {
+    max-width: 50px;
 }

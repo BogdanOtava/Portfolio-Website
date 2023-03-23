@@ -43,7 +43,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('index')) }}" href="{{ url_for('index') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('about')) }}" href="{{ url_for('about') }}">About</a></li>
-                        <li class="nav-item"><a class="nav-link me-3" href="#">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('skills')) }}" href="{{ url_for('skills') }}">Skills</a></li>
                         <li class="nav-item"><a class="nav-link me-3" href="#">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link me-3" href="#">Contact</a></li>
                     </ul>
@@ -62,9 +62,9 @@
             <div class="container text-center">
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="#"><i class="social-icon bx bxl-github px-1"></i></a>
-                        <a href="#"><i class="social-icon bx bxl-gmail px-1"></i></a>
-                        <a href="#"><i class="social-icon bx bxl-linkedin-square px-1"></i></a>
+                        <a href="https://github.com/BogdanOtava"><i class="social-icon bx bxl-github px-1"></i></a>
+                        <a href="{{ url_for('index') }}"><i class="social-icon bx bxl-gmail px-1"></i></a>
+                        <a href="https://www.linkedin.com/in/bogdan-otav%C4%83-26087b23b/"><i class="social-icon bx bxl-linkedin-square px-1"></i></a>
                     </div>
                 </div>
             </div>

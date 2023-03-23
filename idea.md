@@ -46,10 +46,10 @@
 
 ## **Skills Page**
 
-- [ ] place every **skill** (programming language, framework, etc.) in a **card**.
-- [ ] add the **logo** of said **skill** as a _background_ to that **card**.
-- [ ] _hovering_ on **card** will _turn_ it the other way and shows some more **information**.
-- [ ] **database-driven**. the **skills** will be automatically updated from the **database**.
+- [x] place every **skill** (programming language, framework, etc.) in a **card**.
+- [x] add the **logo** of said **skill** as a _background_ to that **card**.
+- [ ] ~~_hovering_ on **card** will _turn_ it the other way and shows some more **information**.~~
+- [ ] ~~**database-driven**. the **skills** will be automatically updated from the **database**.~~
 
 ---
 
