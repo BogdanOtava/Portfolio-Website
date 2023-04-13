@@ -249,3 +249,33 @@ body {
 .skills .inner-card .img-fluid {
     max-width: 50px;
 }
+
+/*********************/
+/*  PORTFOLIO        */
+/*********************/
+
+.portfolio {
+    margin-top: 10rem;
+}
+
+.portfolio .page-title {
+    color: var(--highlights-color);
+    font-weight: 900;
+}
+
+.portfolio .inner-card {
+    transition: 0.3s;
+}
+
+.portfolio .inner-card:hover {
+    transform: scale(1.05);
+}
+
+.portfolio .inner-card .card-title {
+    color: var(--highlights-color);
+    font-weight: 700;
+}
+
+.portfolio .inner-card .img-fluid {
+    max-width: 25px;
+}

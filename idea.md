@@ -55,8 +55,8 @@
 
 ## **Portfolio Page**
 
-- [ ] **slide show** with **each project** on a **slide**.
-- [ ] **database-driven**. the **projects** will be automatically updated from the **database**.
+- [ ] ~~**slide show** with **each project** on a **slide**.~~
+- [ ] ~~**database-driven**. the **projects** will be automatically updated from the **database**.~~
 
 ---
 

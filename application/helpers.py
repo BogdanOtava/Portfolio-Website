@@ -1,6 +1,10 @@
 # Helper functions
 
+import requests
 import json
+
+from tkn import ACCESS_TOKEN
+from config import TEXT_PATH
 
 
 def is_active(current_path:str, nav_path:str) -> str:
@@ -12,7 +16,7 @@ def is_active(current_path:str, nav_path:str) -> str:
     return ""
 
 
-def read_file(file_path:str) -> list:
+def read_description(file_path:str) -> list:
     """Returns the content of a text file as a list of strings where each string is a paragraph."""
 
     content = []
@@ -37,15 +41,13 @@ def read_file(file_path:str) -> list:
                 content.append(current_paragraph)
     except FileNotFoundError:
         print(f"ERROR! File could not be found for path: {file_path}.")
-        return None
     except Exception as error:
         print(f"ERROR! {error}.")
-        return None
 
     return content
 
 
-def get_skills(file_path:str) -> list:
+def get_skills(file_path:str) -> tuple:
     """Returns three lists one for each type of cards in the JSON file."""
 
     try:
@@ -53,7 +55,6 @@ def get_skills(file_path:str) -> list:
             data = json.load(file)
     except FileNotFoundError:
         print(f"ERROR! File could not be found for path: {file_path}.")
-        return None
     except json.JSONDecodeError as error:
         print(f"ERROR! {error}.")
     except Exception as error:
@@ -65,3 +66,67 @@ def get_skills(file_path:str) -> list:
     technologies = [card for card in data["cards"] if card["type"] == "technology"]
 
     return languages, frameworks, technologies
+
+
+def get_repositories() -> list:
+    """Returns a list of dictionaries which contains information about each public repository on my GitHub profile."""
+
+    url = "https://api.github.com/users/bogdanotava/repos"
+    params = {"per_page": 1000}
+    headers = {"Authorization": f"token {ACCESS_TOKEN}"}
+
+    try:
+        response = requests.get(url, params=params, headers=headers)
+
+        if response.status_code == 200:
+            data = json.loads(response.text)
+
+            repo_list = []
+
+            # Iterate through each repository and add the information needed to the list
+            for repo in data:
+                # Retrieve information only for non-forked repositories
+                if not repo["fork"]:
+                    # Check for the README repository so it won't be included
+                    if "BogdanOtava" not in repo["name"]:
+                        repo_info = {}
+                        repo_info["name"] = repo["name"]
+                        repo_info["description"] = repo["description"]
+                        repo_info["url"] = repo["html_url"]
+
+                        # Get all languages used in the repository
+                        languages = repo["languages_url"]
+                        languages_response = requests.get(languages)
+                        languages_data = languages_response.json()
+                        sorted_languages = sorted(languages_data.items(), key=lambda x: x[1], reverse=True)
+
+                        # Get top three most used languages in repository
+                        top_languages = [lang[0] for lang in sorted_languages[:3]]
+                        repo_info["languages"] = top_languages
+
+                        # Add the repository dictionary to the list of repositories
+                        repo_list.append(repo_info)
+
+            return repo_list
+        else:
+            print(f"ERROR! {response.status_code} - {response.reason}.")
+    except requests.exceptions.Timeout:
+        print("Request timed out.")
+    except requests.exceptions.TooManyRedirects:
+        print("Too many redirects.")
+    except requests.exceptions.RequestException as error:
+        print(f"ERROR! {error}.")
+
+
+def get_language_image(language:str) -> str:
+    """Returns the image of a programming language from 'skills.json'."""
+
+    try:
+        with open(f"{TEXT_PATH}/skills.json") as file:
+            data = json.load(file)
+    except FileNotFoundError as error:
+        print(f"ERROR! {error}.")
+    else:
+        for card in data.get("cards", []):
+            if card.get("type") == "language" and card.get("title", "").lower() == language.lower():
+                return card.get("image")

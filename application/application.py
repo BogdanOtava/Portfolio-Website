@@ -1,12 +1,16 @@
 # Sets up the routes for all the pages
 
 from flask import Flask, render_template
+from flask_caching import Cache
 from config import TEMPLATES_PATH, TEXT_PATH
 from application.helpers import *
 
 
 app = Flask(__name__, template_folder=TEMPLATES_PATH)
 app.jinja_env.filters["is_active"] = is_active
+app.jinja_env.filters["get_language_image"] = get_language_image
+
+cache = Cache(app, config={"CACHE_TYPE": "simple", "CACHE_DEFAULT_TIMEOUT": 3600})
 
 
 @app.route("/")
@@ -20,7 +24,7 @@ def index():
 def about():
     """Renders the 'About Me' page of the website."""
 
-    content = read_file(f"{TEXT_PATH}/about.txt")
+    content = read_description(f"{TEXT_PATH}/about.txt")
 
     return render_template("about.html", content=content)
 
@@ -32,3 +36,13 @@ def skills():
     skills = get_skills(f"{TEXT_PATH}/skills.json")
 
     return render_template("skills.html", skills=skills)
+
+
+@app.route("/portfolio")
+@cache.cached()
+def portfolio():
+    """Renders the 'Portfolio' page of the website."""
+
+    repos = get_repositories()
+
+    return render_template("portfolio.html", repos=repos)
