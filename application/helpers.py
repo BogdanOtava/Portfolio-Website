@@ -3,7 +3,7 @@
 import requests
 import json
 
-from tkn import ACCESS_TOKEN
+from tkn import GITHUB_ACCESS_TOKEN
 from config import TEXT_PATH
 
 
@@ -73,7 +73,7 @@ def get_repositories() -> list:
 
     url = "https://api.github.com/users/bogdanotava/repos"
     params = {"per_page": 1000}
-    headers = {"Authorization": f"token {ACCESS_TOKEN}"}
+    headers = {"Authorization": f"token {GITHUB_ACCESS_TOKEN}"}
 
     try:
         response = requests.get(url, params=params, headers=headers)

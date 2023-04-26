@@ -62,10 +62,10 @@
 
 ## **Contact Page**
 
-- [ ] **input**: _first name_, _last name_, _email_, _subject_, _message_.
-- [ ] **button** that _sends an email_ with that information.
+- [x] **input**: _first name_, _last name_, _email_, _subject_, _message_.
+- [x] **button** that _sends an email_ with that information.
 - [ ] _option_ for the **sender** to _receive an email_ as well.
-- [ ] **display** a _validation message_.
+- [x] **display** a _validation message_.
 
 ---
 

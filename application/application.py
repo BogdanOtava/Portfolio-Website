@@ -1,9 +1,10 @@
 # Sets up the routes for all the pages
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_caching import Cache
 from config import TEMPLATES_PATH, TEXT_PATH
 from application.helpers import *
+from tkn import *
 
 
 app = Flask(__name__, template_folder=TEMPLATES_PATH)
@@ -46,3 +47,40 @@ def portfolio():
     repos = get_repositories()
 
     return render_template("portfolio.html", repos=repos)
+
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    """Renders the 'Contact' page of the website."""
+
+    # User reached route via POST
+    if request.method == "POST":
+        first_name = request.form["firstName"]
+        last_name = request.form["lastName"]
+        email = request.form["email"]
+        subject = request.form["subject"]
+        message = request.form["message"]
+
+        # Format message
+        message = f"FROM: {first_name} {last_name} <{email}>\nSUBJECT: {subject}\n\n{message}"
+
+        # Send email using Mailgun API
+        response = requests.post(
+            f"https://api.eu.mailgun.net/v3/{MAILGUN_DOMAIN}/messages",
+            auth=("api", MAILGUN_API_KEY),
+            data={
+                "from": f"{first_name} {last_name} <{email}>",
+                "to": RECEIVER_EMAIL,
+                "subject": subject,
+                "text": message
+            }
+        )
+
+        # Check for successful API response
+        if response.status_code == 200:
+            return render_template("result.html", status_code=response.status_code, message="Your email has been sent! I'll contact you as soon as possible.")
+        else:
+            return render_template("result.html", status_code=response.status_code, message="Your email could not be sent! Please try again.")
+
+    # User reached route via GET
+    return render_template("contact.html")

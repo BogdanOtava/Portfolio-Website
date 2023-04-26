@@ -1,0 +1,37 @@
+<!-- The 'Email Response' page -->
+
+{% extends "layout.html" %}
+
+{% block head %}
+    <!-- Inherit form 'layout.html' -->
+    {{ super() }}
+{% endblock %}
+
+{% block title %}
+    Email Response
+{% endblock %}
+
+{% block main %}
+    <!-- Background -->
+    <img src="../static/images/trianglify_background.png" class="background position-fixed w-100 h-100 top-0 start-0" loading="lazy">
+    <!-- End of Background -->
+    <!-- Main Content -->
+    <div class="container response mb-5 pb-5">
+        <!-- Title -->
+        <div class="row mb-3">
+            <div class="col-md-12 text-center">
+                <h1 class="page-title">{{ "SUCCESSFUL!" if status_code == 200 else "COULD NOT BE SEND!" }}</h1>
+            </div>
+        </div>
+        <!-- End of Title -->
+        <!-- Message -->
+        <div class="card message-card card-design text-center px-5 py-5">
+            {% if status_code == 200 %}
+                <p>{{ status_code }}</p>
+            {% else %}
+                <p>{{ status_code }}</p>
+            {% endif %}
+        </div>
+        <!-- End of Message -->
+    </div>
+{% endblock %}

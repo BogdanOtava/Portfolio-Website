@@ -45,7 +45,7 @@
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('about')) }}" href="{{ url_for('about') }}">About</a></li>
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('skills')) }}" href="{{ url_for('skills') }}">Skills</a></li>
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('portfolio')) }}" href="{{ url_for('portfolio') }}">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link me-3" href="#">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('contact')) }}" href="{{ url_for ('contact') }}">Contact</a></li>
                     </ul>
                 </div>
                 <!-- End of Navigation Menu -->
@@ -63,7 +63,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <a href="https://github.com/BogdanOtava"><i class="social-icon bx bxl-github px-1"></i></a>
-                        <a href="{{ url_for('index') }}"><i class="social-icon bx bxl-gmail px-1"></i></a>
+                        <a href="{{ url_for('contact') }}"><i class="social-icon bx bxl-gmail px-1"></i></a>
                         <a href="https://www.linkedin.com/in/bogdan-otav%C4%83-26087b23b/"><i class="social-icon bx bxl-linkedin-square px-1"></i></a>
                     </div>
                 </div>
