@@ -20,17 +20,14 @@
         <!-- Title -->
         <div class="row mb-3">
             <div class="col-md-12 text-center">
-                <h1 class="page-title">{{ "SUCCESSFUL!" if status_code == 200 else "COULD NOT BE SEND!" }}</h1>
+                <h1 class="page-title">COULD NOT BE SENT</h1>
             </div>
         </div>
         <!-- End of Title -->
         <!-- Message -->
         <div class="card message-card card-design text-center px-5 py-5">
-            {% if status_code == 200 %}
-                <p>{{ status_code }}</p>
-            {% else %}
-                <p>{{ status_code }}</p>
-            {% endif %}
+            <p>Thanks for trying to reach out!</p>
+            <p>At this moment, this feature is not available, but if you want to cotact me you can find me on LinkedIn.</p>
         </div>
         <!-- End of Message -->
     </div>

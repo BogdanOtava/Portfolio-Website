@@ -55,32 +55,14 @@ def contact():
 
     # User reached route via POST
     if request.method == "POST":
-        first_name = request.form["firstName"]
-        last_name = request.form["lastName"]
-        email = request.form["email"]
-        subject = request.form["subject"]
-        message = request.form["message"]
-
-        # Format message
-        message = f"FROM: {first_name} {last_name} <{email}>\nSUBJECT: {subject}\n\n{message}"
-
-        # Send email using Mailgun API
-        response = requests.post(
-            f"https://api.eu.mailgun.net/v3/{MAILGUN_DOMAIN}/messages",
-            auth=("api", MAILGUN_API_KEY),
-            data={
-                "from": f"{first_name} {last_name} <{email}>",
-                "to": RECEIVER_EMAIL,
-                "subject": subject,
-                "text": message
-            }
-        )
-
-        # Check for successful API response
-        if response.status_code == 200:
-            return render_template("result.html", status_code=response.status_code, message="Your email has been sent! I'll contact you as soon as possible.")
-        else:
-            return render_template("result.html", status_code=response.status_code, message="Your email could not be sent! Please try again.")
+        return render_template("result.html")
 
     # User reached route via GET
     return render_template("contact.html")
+
+
+@app.route("/result")
+def result():
+    """Renders the 'Result' page of the website."""
+
+    return render_template("result.html")
