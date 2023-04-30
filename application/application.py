@@ -1,6 +1,6 @@
 # Sets up the routes for all the pages
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 from flask_caching import Cache
 from config import TEMPLATES_PATH, TEXT_PATH
 from application.helpers import *
@@ -11,17 +11,31 @@ app = Flask(__name__, template_folder=TEMPLATES_PATH)
 app.jinja_env.filters["is_active"] = is_active
 app.jinja_env.filters["get_language_image"] = get_language_image
 
-cache = Cache(app, config={"CACHE_TYPE": "simple", "CACHE_DEFAULT_TIMEOUT": 3600})
+app.config["CACHE_TYPE"] = "simple"
+app.config["CACHE_DEFAULT_TIMEOUT"] = 3600
+cache = Cache(app)
 
 
 @app.route("/")
-def index():
+def loading():
+    """Renders the 'Loading' page of the website."""
+
+    response = make_response(render_template("loading.html"))
+    response.headers["Cache-Control"] = "public, max-age=86400"
+
+    return response
+
+
+@app.route("/home")
+@cache.cached()
+def home():
     """Renders the 'Home' page of the website."""
 
-    return render_template("index.html")
+    return render_template("home.html")
 
 
 @app.route("/about")
+@cache.cached()
 def about():
     """Renders the 'About Me' page of the website."""
 
@@ -31,6 +45,7 @@ def about():
 
 
 @app.route("/skills")
+@cache.cached()
 def skills():
     """Renders the 'Skills' page of the website."""
 
@@ -50,6 +65,7 @@ def portfolio():
 
 
 @app.route("/contact", methods=["GET", "POST"])
+@cache.cached()
 def contact():
     """Renders the 'Contact' page of the website."""
 
@@ -62,6 +78,7 @@ def contact():
 
 
 @app.route("/result")
+@cache.cached()
 def result():
     """Renders the 'Result' page of the website."""
 

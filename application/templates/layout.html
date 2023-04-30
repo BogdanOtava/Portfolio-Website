@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-md fixed-top py-4">
             <div class="container">
                 <!-- Title -->
-                <a class="navbar-brand" href="{{ url_for('index') }}">
+                <a class="navbar-brand" href="{{ url_for('home') }}">
                     <img class="img-fluid logo" src="../static/images/logo.png">
                 </a>
                 <!-- End of Title -->
@@ -41,7 +41,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('index')) }}" href="{{ url_for('index') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('home')) }}" href="{{ url_for('home') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('about')) }}" href="{{ url_for('about') }}">About</a></li>
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('skills')) }}" href="{{ url_for('skills') }}">Skills</a></li>
                         <li class="nav-item"><a class="nav-link me-3 {{ request.path | is_active(url_for('portfolio')) }}" href="{{ url_for('portfolio') }}">Portfolio</a></li>

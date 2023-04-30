@@ -315,7 +315,7 @@ select option {
 }
 
 /*********************/
-/*  RESPONSE          */
+/*  RESPONSE         */
 /*********************/
 
 .response {
@@ -325,4 +325,77 @@ select option {
 .response .page-title {
     color: var(--highlights-color);
     font-weight: 900;
+}
+
+/*********************/
+/*  LOADING          */
+/*********************/
+
+.loading {
+    width: 600px;
+    height: 36px;
+    left: 50%;
+    top: 40%;
+    margin-left: -300px;
+    overflow: visible;
+    cursor: default;
+}
+
+.loading div {
+    position: absolute;
+    width: 20px;
+    height: 66px;
+    opacity: 0;
+    animation: move 2s linear infinite;
+    transform: rotate(180deg);
+    color: var(--main-color);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.loading div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.loading div:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.loading div:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.loading div:nth-child(6) {
+    animation-delay: 1s;
+}
+
+.loading div:nth-child(7) {
+    animation-delay: 1.2s;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+    35% {
+        left: 41%;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    65% {
+        left: 59%;
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        transform: rotate(-180deg);
+        opacity: 0;
+    }
 }
