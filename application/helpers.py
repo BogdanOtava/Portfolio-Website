@@ -2,8 +2,8 @@
 
 import requests
 import json
+import os
 
-from tkn import GITHUB_ACCESS_TOKEN
 from config import TEXT_PATH
 
 
@@ -71,9 +71,11 @@ def get_skills(file_path:str) -> tuple:
 def get_repositories() -> list:
     """Returns a list of dictionaries which contains information about each public repository on my GitHub profile."""
 
+    github_token = os.environ["GITHUB_ACCESS"]
+
     url = "https://api.github.com/users/bogdanotava/repos"
     params = {"per_page": 1000}
-    headers = {"Authorization": f"token {GITHUB_ACCESS_TOKEN}"}
+    headers = {"Authorization": f"token {github_token}"}
 
     try:
         response = requests.get(url, params=params, headers=headers)

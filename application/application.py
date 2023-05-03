@@ -4,7 +4,6 @@ from flask import Flask, render_template, request, make_response
 from flask_caching import Cache
 from config import TEMPLATES_PATH, TEXT_PATH
 from application.helpers import *
-from tkn import *
 
 
 app = Flask(__name__, template_folder=TEMPLATES_PATH)
