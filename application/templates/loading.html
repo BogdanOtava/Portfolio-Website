@@ -16,9 +16,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+        <!-- Particles.js -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <!-- JS -->
         <script src="../static/js/websiteCaching.js"></script>
         <script src="../static/js/serviceWorker.js"></script>
+        <script src="../static/js/particles.js" defer></script>
         <!-- CSS Style -->
         <link href="../static/css/styles.css" rel="stylesheet">
         <!-- Title -->
@@ -26,6 +29,10 @@
     </head>
     
     <body>
+        <!-- Particles Background -->
+        <div id="particles-js" class="background position-fixed w-100 h-100 top-0 start-0"></div>
+        <!-- End of Particles Background -->
+        <!-- Loading -->
         <div class="loading position-absolute">
             <div>G</div>
             <div>N</div>
@@ -35,5 +42,6 @@
             <div>O</div>
             <div>L</div>
         </div>
+        <!-- End of Loading -->
     </body>
 </html>

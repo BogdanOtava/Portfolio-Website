@@ -7,6 +7,9 @@
     --links-color: rgb(191, 172, 200);
     --links-hover-color: rgb(241, 217, 252);
     --highlights-color: rgb(67, 5, 126);
+    --highlights-v2-color: rgb(240, 160, 11);;
+    --buttons-color: rgba(255, 178, 13, 0.7);
+    --buttons-hover-color: rgba(245, 191, 76, 0.7);
 }
 
 body {
@@ -23,7 +26,7 @@ body {
 /*********************/
 
 .btn {
-    background-color: var(--links-color);
+    background-color: var(--buttons-color);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     border-radius: 25px;
     font-weight: 600;
@@ -32,7 +35,7 @@ body {
 }
 
 .btn:hover {
-    background-color: var(--links-hover-color);
+    background-color: var(--buttons-hover-color);
     transform: scale(1.05);
 }
 
@@ -114,13 +117,13 @@ body {
 }
 
 .social-icon {
-    color: var(--links-color);
+    color: var(--buttons-color);
     font-size: 40px;
     transition: 0.3s;
 }
 
 .social-icon:hover {
-    color: var(--links-hover-color) !important;
+    color: var(--buttons-hover-color) !important;
     transform: scale(1.10);
 }
 
@@ -144,7 +147,7 @@ body {
 }
 
 .description .main-text .name {
-    color: var(--highlights-color);
+    color: var(--highlights-v2-color);
 }
 
 .description .secondary-text {
@@ -348,7 +351,7 @@ select option {
     opacity: 0;
     animation: move 2s linear infinite;
     transform: rotate(180deg);
-    color: var(--main-color);
+    color: var(--highlights-color);
     font-family: 'Orbitron', sans-serif;
     font-size: 50px;
     font-weight: 700;
